@@ -27,7 +27,7 @@ class SendForgotPasswordEmailService {
     const forgotPasswordTemplate = path.resolve(
       __dirname,
       '..',
-      'viwes',
+      'views',
       'forgot_password.hbs',
     );
 
@@ -41,7 +41,7 @@ class SendForgotPasswordEmailService {
         file: forgotPasswordTemplate,
         variables: {
           name: user.name,
-          link: `https://localhost:3000/reset_password?token=${token}`,
+          link: `http://localhost:3000/reset_password?token=${token}`,
         },
       },
     });
